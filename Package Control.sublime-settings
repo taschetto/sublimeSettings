@@ -1,6 +1,7 @@
 {
 	"installed_packages":
 	[
+		"AAAPackageDev",
 		"Better Build System",
 		"BracketHighlighter",
 		"ColorPicker",
@@ -11,6 +12,7 @@
 		"GitGutter",
 		"LaTeX-cwl",
 		"LaTeXing",
+		"LaTeXTools",
 		"LESS",
 		"Oasis Theme",
 		"Sass",
