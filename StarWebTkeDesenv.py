@@ -53,15 +53,17 @@ def main():
 
   # Parses command line arguments
   parser = argparse.ArgumentParser(description='Fator 7 TKE Desenv Compiler.')
+  parser.add_argument("--copy", action="store_true")
   parser.add_argument("filepath")
   args = parser.parse_args()
 
   # Copy file to server
-  copy_path = network_path + path_leaf(args.filepath)
-  if (not copyFile(args.filepath, copy_path)):
-    print("Could not copy '" + args.filepath + "' to '" + copy_path + "'. Aborting...")
-    sys.exit(0)
-  print("Copied '" + args.filepath + "' to '" + copy_path + "'.")
+  if args.copy:
+    copy_path = network_path + path_leaf(args.filepath)
+    if (not copyFile(args.filepath, copy_path)):
+      print("Could not copy '" + args.filepath + "' to '" + copy_path + "'. Aborting...")
+      sys.exit(0)
+    print("Copied '" + args.filepath + "' to '" + copy_path + "'.")
 
   # Creates a cookie jar and a request opener
   cj = http.cookiejar.CookieJar()
