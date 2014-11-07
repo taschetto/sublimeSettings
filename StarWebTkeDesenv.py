@@ -1,13 +1,16 @@
 import urllib.parse
 import urllib.request
+import http.cookiejar
 
 url = 'http://stwebdv.thyssenkruppelevadores.com.br/scripts/gisdesenv.pl/swfw3.r'
 values = {'usuario' : 'admin',
           'senha' : 'tke'}
 
-data = urllib.parse.urlencode(values)
-data = data.encode('utf-8') # data should be bytes
+cj = http.cookiejar.CookieJar()
+data = urllib.parse.urlencode(values).encode('utf-8')
+opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
 req = urllib.request.Request(url, data)
-response = urllib.request.urlopen(req)
-the_page = response.read()
-print(the_page)
+response = opener.open(req)
+cj.extract_cookies(response, req)
+
+print(cj._cookies)
