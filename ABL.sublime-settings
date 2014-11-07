@@ -1,3 +1,11 @@
 {
-  "tab_size": 3
+  "tab_size": 3,
+  "detect_indentation": false,
+  "extensions":
+  [
+    "p",
+    "w",
+    "html",
+    "i"
+  ]
 }
