@@ -1,7 +1,22 @@
+import argparse
 import urllib.parse
 import urllib.request
 import http.cookiejar
 from html.parser import HTMLParser
+import shutil
+import ntpath
+import sys
+
+def copyFile(src, dest):
+  try:
+    shutil.copy(src, dest)
+  except shutil.Error as e:
+    print('Error: %s' % e)
+    return False;
+  except IOError as e:
+    print('Error: %s' % e.strerror)
+    return False;
+  return True;
 
 def sendPost(opener, url, data):
   postData = urllib.parse.urlencode(data).encode('utf-8')
@@ -24,18 +39,45 @@ class TableParser(HTMLParser):
   def handle_endtag(self, tag):
     self.in_td = False
 
-cj = http.cookiejar.CookieJar()
-opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+def path_leaf(path):
+  head, tail = ntpath.split(path)
+  return tail or ntpath.basename(head)
 
-loginUrl = 'http://stwebdv.thyssenkruppelevadores.com.br/scripts/gisdesenv.pl/swfw3.r'
-loginData = {'usuario' : 'admin', 'senha' : 'tke'}
+def main():
+  # paths and urls
+  starweb_url = 'http://stwebdv.thyssenkruppelevadores.com.br'
+  loginUrl = starweb_url + '/scripts/gisdesenv.pl/swfw3'
+  compilerUrl = starweb_url + '/scripts/gisdesenv.pl/progs/swfw0080'
+  starweb_local_path = 'c:/sisweb/desenv/ait/'
+  network_path = '\\\\stwebdv\\sisweb\\desenv\\ait\\'
 
-sendPost(opener, loginUrl, loginData)
+  # Parses command line arguments
+  parser = argparse.ArgumentParser(description='Fator 7 TKE Desenv Compiler.')
+  parser.add_argument("filepath")
+  args = parser.parse_args()
 
-compilerUrl = 'http://stwebdv.thyssenkruppelevadores.com.br/scripts/gisdesenv.pl/progs/swfw0080'
-compilerData = {'Arquivo' : 'c:/sisweb/desenv/ait/ait_aacm1.html,c:/sisweb/desenv/ait/ait_aacm2.html,c:/sisweb/desenv/ait/ait_aacm3.html,'}
+  # Copy file to server
+  copy_path = network_path + path_leaf(args.filepath)
+  if (not copyFile(args.filepath, copy_path)):
+    print("Could not copy '" + args.filepath + "' to '" + copy_path + "'. Aborting...")
+    sys.exit(0)
+  print("Copied '" + args.filepath + "' to '" + copy_path + "'.")
 
-page = sendPost(opener, compilerUrl, compilerData).decode('iso8859-1')
+  # Creates a cookie jar and a request opener
+  cj = http.cookiejar.CookieJar()
+  opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
 
-parser = TableParser()
-parser.feed(str(page))
+  # Login to StarWeb
+  loginData = {'usuario' : 'admin', 'senha' : 'tke'}
+  sendPost(opener, loginUrl, loginData)
+
+  # Compiles the specifief file
+  compilerData = {'Arquivo' : starweb_local_path + path_leaf(args.filepath)}
+  page = sendPost(opener, compilerUrl, compilerData).decode('iso8859-1')
+
+  # Parses the response HTML to catch messages and errors
+  parser = TableParser()
+  parser.feed(str(page))
+
+if __name__ == "__main__":
+  main()
