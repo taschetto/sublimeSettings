@@ -57,6 +57,8 @@ def main():
   parser.add_argument("filepath")
   args = parser.parse_args()
 
+  print("Building %s..." % args.filepath)
+
   # Copy file to server
   if args.copy:
     copy_path = network_path + path_leaf(args.filepath)
