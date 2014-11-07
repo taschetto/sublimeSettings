@@ -1,4 +1,5 @@
 {
-  "cmd" : ["python", "-u", "C:\\Users\\Guilherme\\Google Drive\\Fator 7\\Testes\\teste7.py", "--copy", "$file"],
+  "cmd" : ["python", "-u", "StarWebTkeDesenv.py", "--copy", "$file"],
+  "working_dir" : ".",
   "encoding": "cp1252"
 }
