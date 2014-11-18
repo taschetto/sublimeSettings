@@ -45,39 +45,69 @@ def path_leaf(path):
 
 def main():
   # paths and urls
-  starweb_url = 'http://stwebdv.thyssenkruppelevadores.com.br'
-  loginUrl = starweb_url + '/scripts/gisdesenv.pl/swfw3'
-  compilerUrl = starweb_url + '/scripts/gisdesenv.pl/progs/swfw0080'
-  starweb_local_path = 'c:/sisweb/desenv/ait/'
-  network_path = '\\\\stwebdv\\sisweb\\desenv\\ait\\'
+  stwebdv_url = 'http://stwebdv.thyssenkruppelevadores.com.br'
+  stwebdv_path = '\\\\stwebdv\\sisweb\\desenv\\'
+  stwebdv_local = 'c:\\sisweb\\desenv\\'
+
+  #stweb_url = 'http://stweb.thyssenkruppelevadores.com.br'
+  #stweb_path = '\\\\stweb\\sisweb\\produ\\'
+  #stweb_local = 'c:/sisweb/produ/'
+
+  login = '/scripts/gisdesenv.pl/swfw3'
+  compiler = '/scripts/gisdesenv.pl/progs/swfw0080'
+
+  login_url = stwebdv_url + login
+  compiler_url = stwebdv_url + compiler
 
   # Parses command line arguments
   parser = argparse.ArgumentParser(description='Fator 7 TKE Desenv Compiler.')
-  parser.add_argument("--copy", action="store_true")
   parser.add_argument("filepath")
+  parser.add_argument("--basepath", default=stwebdv_path)
   args = parser.parse_args()
 
-  print("Building %s..." % args.filepath)
+  skip_copy = False
+  skip_compile = False
+
+  if ntpath.commonprefix([args.filepath, stwebdv_path]) == stwebdv_path:
+    relative_path = ntpath.relpath(args.filepath, start=stwebdv_path)
+    skip_copy = True
+  else:
+    try:
+      relative_path = ntpath.relpath(args.filepath, start=args.basepath)
+    except:
+      print("Failed! Perhaps you should specify the basepath parameter?")
+      return
+
+  print("Building '%s'..." % relative_path)
+
+  fileName, fileExtension = ntpath.splitext(relative_path)
+  if fileExtension == ".i":
+    skip_compile = True
 
   # Copy file to server
-  if args.copy:
-    copy_path = network_path + path_leaf(args.filepath)
-    if (not copyFile(args.filepath, copy_path)):
-      print("Could not copy '" + args.filepath + "' to '" + copy_path + "'. Aborting...")
+  if not skip_copy:
+    copy_to = stwebdv_path + relative_path
+
+    if (not copyFile(args.filepath, copy_to)):
+      print("Could not copy '" + args.filepath + "' to '" + copy_to + "'. Aborting...")
       sys.exit(0)
-    print("Copied '" + args.filepath + "' to '" + copy_path + "'.")
+    print("Copied '" + args.filepath + "' to '" + copy_to + "'.")
+
+  if skip_compile:
+    print("Skipping compilation for '%s'..." % relative_path)
+    return
 
   # Creates a cookie jar and a request opener
   cj = http.cookiejar.CookieJar()
   opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
 
   # Login to StarWeb
-  loginData = {'usuario' : 'admin', 'senha' : 'tke'}
-  sendPost(opener, loginUrl, loginData)
+  login_data = {'usuario' : 'admin', 'senha' : 'tke'}
+  sendPost(opener, login_url, login_data)
 
-  # Compiles the specifief file
-  compilerData = {'Arquivo' : starweb_local_path + path_leaf(args.filepath)}
-  page = sendPost(opener, compilerUrl, compilerData).decode('iso8859-1')
+  # Compiles the specified file
+  compiler_data = {'Arquivo' : stwebdv_local + relative_path}
+  page = sendPost(opener, compiler_url, compiler_data).decode('iso8859-1')
 
   # Parses the response HTML to catch messages and errors
   parser = TableParser()
