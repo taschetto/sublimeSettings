@@ -68,20 +68,22 @@ def main():
   skip_copy = False
   skip_compile = False
 
+  print("Building '%s'..." % args.filepath)
+
   if ntpath.commonprefix([args.filepath, stwebdv_path]) == stwebdv_path:
-    relative_path = ntpath.relpath(args.filepath, start=stwebdv_path)
-    skip_copy = True
+    start_path, skip_copy = stwebdv_path, True
   else:
-    try:
-      relative_path = ntpath.relpath(args.filepath, start=args.basepath)
-    except:
-      print("Failed! Perhaps you should specify the basepath parameter?")
-      return
+    start_path = args.basepath
 
-  print("Building '%s'..." % relative_path)
+  try:
+    relative_path = ntpath.relpath(args.filepath, start=start_path)
+  except:
+    print("Failed! Perhaps you should use the --base parameter?")
+    return
 
-  fileName, fileExtension = ntpath.splitext(relative_path)
-  if fileExtension == ".i":
+  # Skips include files
+  file_name, file_extension = ntpath.splitext(relative_path)
+  if file_extension == ".i":
     skip_compile = True
 
   # Copy file to server
