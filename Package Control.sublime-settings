@@ -1,4 +1,12 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
 		"AAAPackageDev",
@@ -9,13 +17,13 @@
 		"Emmet",
 		"Filter Lines",
 		"Git",
-		"GitGutter",
-		"LaTeX-cwl",
-		"LaTeXing",
+		"Github Color Theme",
 		"LaTeXTools",
 		"LESS",
 		"Oasis Theme",
 		"OpenEdge ABL",
+		"Package Control",
+		"RailsCasts Colour Scheme",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeLog",

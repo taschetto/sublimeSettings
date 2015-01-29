@@ -1,7 +1,7 @@
 {
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Eighties.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
