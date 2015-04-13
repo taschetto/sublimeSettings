@@ -1,7 +1,7 @@
 {
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Eighties.tmTheme",
+	"color_scheme": "Packages/Aurora Color Scheme/Aurora.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -43,12 +43,14 @@
 	"font_size": 11,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"Markdown"
 	],
 	"line_padding_bottom": 1,
 	"show_encoding": true,
+	"spacegray_tabs_font_normal": true,
 	"tab_size": 2,
-	"theme": "Soda Dark 3.sublime-theme",
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": "false"
 }

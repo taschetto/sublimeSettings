@@ -2,32 +2,31 @@
 	"in_process_packages":
 	[
 	],
-	"installed_dependencies":
-	[
-		"0_package_control_loader",
-		"bz2"
-	],
 	"installed_packages":
 	[
 		"AAAPackageDev",
+		"Aurora Color Scheme",
 		"Better Build System",
+		"BracketGuard",
 		"BracketHighlighter",
 		"ColorPicker",
 		"Dracula Color Scheme",
 		"Emmet",
 		"Filter Lines",
 		"Git",
-		"Github Color Theme",
+		"GitGutter-Edge",
+		"Inspired GitHub Color Scheme",
 		"LaTeXTools",
 		"LESS",
-		"Oasis Theme",
+		"LiveStamps",
+		"MarkdownEditing",
+		"Monokai Gray",
 		"OpenEdge ABL",
 		"Package Control",
 		"RailsCasts Colour Scheme",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeLog",
-		"Takana",
 		"Theme - Flatland",
 		"Theme - Soda",
 		"Theme - Spacegray",
