@@ -39,7 +39,7 @@
 		"tmp",
 		"coverage"
 	],
-	"font_face": "Consolas",
+	"font_face": "Ubuntu Mono",
 	"font_size": 11,
 	"ignored_packages":
 	[
