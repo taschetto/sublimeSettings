@@ -1,5 +1,0 @@
-{
-  "working_dir" : "C:/Users/Guilherme/AppData/Roaming/Sublime Text 3/Packages/User",
-  "cmd" : ["python", "-u", "StarWebTke.py", "$file", "--base", "C:/Users/Guilherme/Google Drive/Fator 7/Clientes/TKE/Desenv/"],
-  "encoding": "cp1252"
-}
