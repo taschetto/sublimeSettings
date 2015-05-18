@@ -5,6 +5,7 @@
 	"installed_packages":
 	[
 		"AAAPackageDev",
+		"ABL",
 		"Aurora Color Scheme",
 		"Better Build System",
 		"BracketGuard",
@@ -18,11 +19,10 @@
 		"Inspired GitHub Color Scheme",
 		"LaTeXTools",
 		"LESS",
-		"LiveStamps",
 		"MarkdownEditing",
 		"Monokai Gray",
-		"OpenEdge ABL",
 		"Package Control",
+		"PackageResourceViewer",
 		"RailsCasts Colour Scheme",
 		"Sass",
 		"SideBarEnhancements",
@@ -32,5 +32,9 @@
 		"Theme - Spacegray",
 		"Tomorrow Color Schemes",
 		"TrailingSpaces"
+	],
+	"repositories":
+	[
+		"https://github.com/fator7/ABL"
 	]
 }
