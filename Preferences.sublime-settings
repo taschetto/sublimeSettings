@@ -39,13 +39,13 @@
 		"tmp",
 		"coverage"
 	],
-	"font_face": "Ubuntu Mono",
-	"font_size": 11,
 	"ignored_packages":
 	[
 		"Vintage",
 		"Markdown"
 	],
+	"font_face": "Consolas",
+	"font_size": 11,
 	"line_padding_bottom": 1,
 	"show_encoding": true,
 	"spacegray_tabs_font_normal": true,

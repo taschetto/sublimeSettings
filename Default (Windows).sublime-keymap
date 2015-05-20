@@ -3,6 +3,6 @@
   { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
   { "keys": ["ctrl+alt+d"], "command": "delete_trailing_spaces" },
   { "keys": ["ctrl+alt+t"], "command": "toggle_trailing_spaces" },
-  { "keys": ["ctrl+alt+x"], "command": "show_panel", "args": { "panel": "output.exec" } },
-  { "keys": ["ctrl+alt+z"], "command": "hide_panel" }
+  { "keys": ["ctrl+shift+."], "command": "show_panel", "args": { "panel": "output.exec" } },
+  { "keys": ["ctrl+shift+,"], "command": "hide_panel" }
 ]
