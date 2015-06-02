@@ -1,7 +1,7 @@
 {
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -39,13 +39,13 @@
 		"tmp",
 		"coverage"
 	],
-	"ignored_packages":
-	[
-		"Vintage",
-		"Markdown"
-	],
 	"font_face": "Consolas",
 	"font_size": 11,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
 	"line_padding_bottom": 1,
 	"show_encoding": true,
 	"spacegray_tabs_font_normal": true,

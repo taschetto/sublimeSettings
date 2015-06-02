@@ -97,8 +97,8 @@ class StarWeb(object):
     self.http_opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookie_jar))
 
   def post(self, url, data):
-    postData = urllib.parse.urlencode(data).encode('utf-8')
-    request = urllib.request.Request(url, postData)
+    post_data = urllib.parse.urlencode(data).encode('utf-8')
+    request = urllib.request.Request(url, post_data)
     response = self.http_opener.open(request)
     return response.read()
 
