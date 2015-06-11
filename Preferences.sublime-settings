@@ -1,6 +1,9 @@
 {
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
+	"caret_extra_bottom": 0,
+	"caret_extra_top": 0,
+	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Aurora Color Scheme/Aurora.tmTheme",
 	"draw_white_space": "all",
@@ -47,17 +50,26 @@
 		"subpixel_antialias",
 		"directwrite"
 	],
-	"font_size": 13,
+	"font_size": 11,
 	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": true,
 	"ignored_packages":
 	[
 		"Markdown",
 		"Vintage"
 	],
+	"line_padding_bottom": 0,
+	"line_padding_top": 0,
+	"overlay_scroll_bars": "enabled",
+	"remember_open_files": true,
+	"rulers":
+	[
+		80
+	],
 	"show_encoding": true,
-	"spacegray_tabs_font_normal": true,
 	"tab_size": 2,
 	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"word_wrap": "false"
+	"word_wrap": true
 }
