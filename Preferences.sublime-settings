@@ -1,8 +1,10 @@
 {
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"caret_style": "phase",
+	"color_scheme": "Packages/Aurora Color Scheme/Aurora.tmTheme",
 	"draw_white_space": "all",
+	"fade_fold_buttons": false,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -39,14 +41,19 @@
 		"tmp",
 		"coverage"
 	],
-	"font_face": "Consolas",
-	"font_size": 11,
+	"font_face": "Inconsolata",
+	"font_options":
+	[
+		"subpixel_antialias",
+		"directwrite"
+	],
+	"font_size": 13,
+	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Markdown",
 		"Vintage"
 	],
-	"line_padding_bottom": 1,
 	"show_encoding": true,
 	"spacegray_tabs_font_normal": true,
 	"tab_size": 2,
