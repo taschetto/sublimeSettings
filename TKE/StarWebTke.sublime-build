@@ -17,6 +17,14 @@
     {
       "name": "Remoto :: GIS DESENV",
       "cmd" : ["python", "-u", "StarWebTke.py", "$file", "--env", "gisdesenv"]
+    },
+    {
+      "name": "Run :: GIS DESENV",
+      "cmd" : ["python", "-u", "StarWebTke.py", "$file", "--env", "gisdesenv", "--run"]
+    },
+    {
+      "name": "Run :: GISGUS DESENV",
+      "cmd" : ["python", "-u", "StarWebTke.py", "$file", "--env", "gisgusdesenv", "--run"]
     }
   ]
 }

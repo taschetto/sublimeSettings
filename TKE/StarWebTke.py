@@ -16,14 +16,15 @@ class Builder(object):
 
   def __init__(self, args):
     self.args = args
-    try:
-      self.relative_path = ntpath.relpath(self.args.filepath, start=self.args.work_dir)
-    except:
+    if not args.run:
       try:
-        self.relative_path = ntpath.relpath(self.args.filepath, start="T:\desenv")
+        self.relative_path = ntpath.relpath(self.args.filepath, start=self.args.work_dir)
       except:
-        print("Failed! Perhaps you should use the --work_dir parameter?")
-        sys.exit(0)
+        try:
+          self.relative_path = ntpath.relpath(self.args.filepath, start="T:\desenv")
+        except:
+          print("Failed! Perhaps you should use the --work_dir parameter?")
+          sys.exit(0)
 
   def copy(self):
     print("Checking file paths...", end="", flush=True)
@@ -61,6 +62,13 @@ class Builder(object):
     star_web = StarWeb(self.args.env)
     star_web.build(self.relative_path)
 
+  def run(self):
+    with open(self.args.filepath, "r") as script_file:
+      script = script_file.read()
+
+    star_web = StarWeb(self.args.env)
+    star_web.run(script)
+
 class TableParser(HTMLParser):
   def __init__(self):
     HTMLParser.__init__(self)
@@ -76,6 +84,21 @@ class TableParser(HTMLParser):
   def handle_endtag(self, tag):
     self.in_td = False
 
+class XmpParser(HTMLParser):
+  def __init__(self):
+    HTMLParser.__init__(self)
+    self.in_xmp = False
+  def handle_starttag(self, tag, attrs):
+    if tag == 'xmp':
+      self.in_xmp = True
+  def handle_data(self, data):
+    if self.in_xmp:
+      data = data.strip()
+      if len(data) > 0:
+        print(data)
+  def handle_endtag(self, tag):
+    self.in_xmp = False
+
 class StarWeb(object):
   SUBDOMAIN = { 'gisdesenv':    'stwebdv',
                 'gisgusdesenv': 'stwebdv',
@@ -85,6 +108,7 @@ class StarWeb(object):
   BASE_URL = 'http://{s}.thyssenkruppelevadores.com.br'
   LOGIN_URL = BASE_URL + '/scripts/{e}.pl/swfw'
   BUILD_URL = BASE_URL + '/scripts/{e}.pl/progs/swfw0080'
+  RUN_URL = BASE_URL + '/scripts/{e}.pl/progs/swfw0090'
 
   CREDENTIALS = {'usuario' : os.environ['starweb_user'], 'senha' : os.environ['starweb_password']}
   LOCAL_PATH = 'c:\\sisweb\\desenv\\'
@@ -93,6 +117,7 @@ class StarWeb(object):
     subdomain = StarWeb.SUBDOMAIN[environment]
     self.login_url = StarWeb.LOGIN_URL.format(s=subdomain, e=environment)
     self.build_url = StarWeb.BUILD_URL.format(s=subdomain, e=environment)
+    self.run_url   = StarWeb.RUN_URL.format(s=subdomain, e=environment)
     self.cookie_jar = http.cookiejar.CookieJar()
     self.http_opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(self.cookie_jar))
 
@@ -122,18 +147,41 @@ class StarWeb(object):
     parser = TableParser()
     return parser.feed(str(page))
 
+  def run(self, script):
+    print("Signing in to StarWeb ({u})...".format(u=self.login_url), end="", flush=True)
+    if not self.login():
+      print(" FAILED!\nRun aborted!")
+      return
+    print(" DONE!")
+
+    print("Running script with StarWeb ({u})...".format(u=self.run_url), end="", flush=True)
+    run_data = {'acao': 'executar', 'conteudoDoEditor' : script}
+    page = self.post(self.run_url, run_data).decode('iso8859-1')
+    print(" DONE!\n")
+
+    content = XmpParser().feed(str(page))
+
+    if content is None:
+      content = TableParser().feed(str(page))
+
+    return content
+
 def main():
   parser = argparse.ArgumentParser(description='Fator 7 TKE Builder.')
   parser.add_argument("filepath")
   parser.add_argument("--work_dir", default='\\\\stwebdv\\sisweb\\desenv\\')
   parser.add_argument("--env", default="gisgusdesenv")
+  parser.add_argument("--run", action="store_true")
   args = parser.parse_args()
 
   print("File:     {f}\nWork dir: {d}\nEnv:      {e}\n".format(f=args.filepath, d=args.work_dir, e=args.env))
 
   builder = Builder(args)
-  builder.copy()
-  builder.build()
+  if args.run:
+    builder.run()
+  else:
+    builder.copy()
+    builder.build()
 
 if __name__ == "__main__":
   main()
