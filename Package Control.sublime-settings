@@ -8,6 +8,7 @@
 		"ABL",
 		"Aurora Color Scheme",
 		"Better Build System",
+		"Better CoffeeScript",
 		"BracketGuard",
 		"BracketHighlighter",
 		"Color Highlighter",
@@ -21,7 +22,8 @@
 		"Google Search",
 		"Indent XML",
 		"Inspired GitHub Color Scheme",
-		"LaTeXTools",
+		"LaTeX-cwl",
+		"LaTeXing",
 		"LESS",
 		"Markdown Preview",
 		"MarkdownEditing",
@@ -45,6 +47,5 @@
 	],
 	"repositories":
 	[
-		"https://github.com/fator7/ABL"
 	]
 }
