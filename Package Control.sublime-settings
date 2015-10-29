@@ -1,11 +1,8 @@
 {
-	"in_process_packages":
-	[
-	],
+	"bootstrapped": true,
 	"installed_packages":
 	[
 		"AAAPackageDev",
-		"ABL",
 		"Aurora Color Scheme",
 		"Better Build System",
 		"Better CoffeeScript",
