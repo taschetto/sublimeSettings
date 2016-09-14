@@ -1,0 +1,22 @@
+{
+  "working_dir" : "$packages/User/StarWebBuilder",
+  "encoding": "cp1252",
+  "variants": [
+    {
+      "name": "GIS Desenv",
+      "cmd" : ["python3", "-u", "StarWebBuilder.py", "$file"]
+    },
+    {
+      "name": "GIS+GUS Desenv",
+      "cmd" : ["python3", "-u", "StarWebBuilder.py", "$file", "--env", "gisgusdesenv"]
+    },
+    {
+      "name": "GIS Desenv (run)",
+      "cmd" : ["python3", "-u", "StarWebBuilder.py", "$file", "--run"]
+    },
+    {
+      "name": "GIS+GUS Desenv (run)",
+      "cmd" : ["python3", "-u", "StarWebBuilder.py", "$file", "--env", "gisgusdesenv", "--run"]
+    }
+  ]
+}

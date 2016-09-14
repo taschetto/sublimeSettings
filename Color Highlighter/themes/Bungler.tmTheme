@@ -12,9 +12,9 @@
 		<string>#75715E</string>
 	</dict>
 	<key>name</key>
-	<string>Aurora</string>
+	<string>Bungler</string>
 	<key>semanticClass</key>
-	<string>theme.dark.heroku</string>
+	<string>theme.dark.bungler</string>
 	<key>settings</key>
 	<array>
 <dict>
@@ -41,7 +41,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#C0C0C0FF</string>
 <key>caret</key>
@@ -73,7 +73,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#FF0000FF</string>
 <key>caret</key>
@@ -105,7 +105,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#003466FF</string>
 <key>caret</key>
@@ -137,7 +137,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#008000FF</string>
 <key>caret</key>
@@ -169,7 +169,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#0000FFFF</string>
 <key>caret</key>
@@ -201,7 +201,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#000000FF</string>
 <key>caret</key>
@@ -233,7 +233,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#808000FF</string>
 <key>caret</key>
@@ -265,7 +265,7 @@
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#302e41FF</string>
+<string>#000001FF</string>
 <key>foreground</key>
 <string>#FFA500FF</string>
 <key>caret</key>
@@ -277,17 +277,17 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#302e40</string>
+				<string>#000000</string>
 				<key>caret</key>
-				<string>#ffffff</string>
+				<string>#F8F8F0</string>
 				<key>foreground</key>
-				<string>#ececec</string>
+				<string>#F8F8F2</string>
 				<key>invisibles</key>
-				<string>#383838</string>
+				<string>#49483E</string>
 				<key>lineHighlight</key>
-				<string>#3f3d4d</string>
+				<string>#49483E</string>
 				<key>selection</key>
-				<string>#4b4959</string>
+				<string>#49483E</string>
 			</dict>
 		</dict>
 		<dict>
@@ -298,7 +298,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#696587</string>
+				<string>#6b6b6b</string>
 			</dict>
 		</dict>
 		<dict>
@@ -309,7 +309,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ffb700</string>
+				<string>#ffef95</string>
 			</dict>
 		</dict>
 		<dict>
@@ -320,7 +320,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#3f89ff</string>
+				<string>#2778a3</string>
 			</dict>
 		</dict>
 		<dict>
@@ -331,9 +331,9 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#3f89ff</string>
+				<string>#2778a3</string>
 				<key>fontStyle</key>
-				<string> italic</string>
+				<string> bold</string>
 			</dict>
 		</dict>
 		<dict>
@@ -344,9 +344,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#3f89ff</string>
-				<key>fontStyle</key>
-				<string></string>
+				<string>#2778a3</string>
 			</dict>
 		</dict>
 		<dict>
@@ -356,8 +354,8 @@
 			<string>variable</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string></string>
+				<key>foreground</key>
+				<string>#ee1030</string>
 			</dict>
 		</dict>
 		<dict>
@@ -368,7 +366,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#e12977</string>
+				<string>#ce2e00</string>
 			</dict>
 		</dict>
 		<dict>
@@ -381,7 +379,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#e12977</string>
+				<string>#ce2e00</string>
 			</dict>
 		</dict>
 		<dict>
@@ -391,10 +389,10 @@
 			<string>storage.type</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#7877ff</string>
 				<key>fontStyle</key>
-				<string> italic</string>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#ce2000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -404,8 +402,10 @@
 			<string>entity.name.class</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
 				<key>foreground</key>
-				<string>#c5e400</string>
+				<string>#00c5c6</string>
 			</dict>
 		</dict>
 		<dict>
@@ -415,10 +415,10 @@
 			<string>entity.other.inherited-class</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#c5e400</string>
 				<key>fontStyle</key>
-				<string> italic </string>
+				<string>italic underline</string>
+				<key>foreground</key>
+				<string>#00c5c6</string>
 			</dict>
 		</dict>
 		<dict>
@@ -428,8 +428,10 @@
 			<string>entity.name.function</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string></string>
 				<key>foreground</key>
-				<string>#c5e400</string>
+				<string>#00c5c6</string>
 			</dict>
 		</dict>
 		<dict>
@@ -439,10 +441,10 @@
 			<string>variable.parameter</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
-				<string>#d9903b</string>
 				<key>fontStyle</key>
-				<string> italic </string>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#f99005</string>
 			</dict>
 		</dict>
 		<dict>
@@ -455,7 +457,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#e12977</string>
+				<string>#ce2e00</string>
 			</dict>
 		</dict>
 		<dict>
@@ -468,7 +470,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#c5e400</string>
+				<string>#A6E22E</string>
 			</dict>
 		</dict>
 		<dict>
@@ -481,7 +483,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#7877ff</string>
+				<string>#66D9EF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -492,9 +494,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string> italic</string>
+				<string></string>
 				<key>foreground</key>
-				<string>#7877ff</string>
+				<string>#66D9EF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -507,7 +509,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#7877ff</string>
+				<string>#66D9EF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -529,11 +531,11 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#c5e400</string>
+				<string>#F92672</string>
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#e12977</string>
+				<string>#F8F8F0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -544,9 +546,9 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#e12977</string>
+				<string>#AE81FF</string>
 				<key>foreground</key>
-				<string>#ffff05</string>
+				<string>#F8F8F0</string>
 			</dict>
 		</dict>
 	</array>
@@ -555,8 +557,6 @@
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>author</key>
-	<string>Palmer Oliveira</string>
-	<key>comment</key>
-	<string>https:&#x2f;&#x2f;github.com&#x2f;expalmer&#x2f;aurora-theme</string>
+	<string>Josh Burgess</string>
 </dict>
 </plist>

@@ -1,0 +1,5 @@
+{
+  "hide_output_when_empty": true,
+  "reparse_on_activated": true,
+  "reparse_on_save": true
+}

@@ -1,11 +1,13 @@
 {
+	"always_show_minimap_viewport": true,
 	"autoReloadChanged": true,
 	"bold_folder_labels": true,
-	"caret_extra_bottom": 0,
-	"caret_extra_top": 0,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"drag_text": false,
 	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"file_exclude_patterns":
@@ -44,23 +46,44 @@
 		"tmp",
 		"coverage"
 	],
-	"font_face": "Inconsolata",
+	"font_face": "Ubuntu Mono",
 	"font_options":
 	[
 		"subpixel_antialias",
 		"directwrite"
 	],
-	"font_size": 9,
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": true,
 	"ignored_packages":
 	[
+		"1337 Color Scheme",
+		"C",
+		"C++",
+		"Git",
+		"Google Search",
 		"Markdown",
+		"Monokai Blueberry Color Scheme",
+		"Monokai Extended",
+		"Numix Theme",
 		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
+	"material_theme_accent_indigo": true,
+	"material_theme_bold_tab": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_contrast_mode": true,
+	"material_theme_disable_tree_indicator": true,
+	"material_theme_panel_separator": true,
+	"material_theme_tabs_autowidth": true,
+	"material_theme_tabs_separator": true,
 	"overlay_scroll_bars": "enabled",
 	"remember_open_files": true,
 	"rulers":
@@ -69,7 +92,7 @@
 	],
 	"show_encoding": true,
 	"tab_size": 2,
-	"theme": "Flatland Dark.sublime-theme",
+	"theme": "Material Brogrammer.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true
 }
